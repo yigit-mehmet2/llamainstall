@@ -26,7 +26,7 @@ This project is tailored to deploy **Llama 3.2 (1B)**, making local AI inference
 Clone the repository and run the setup script:
 
 ```bash
-git clone [https://github.com/yigit_mehmet2/llamainstall/llamainstall.sh]
+git clone https://github.com/yigit_mehmet2/llamainstall
 cd llamainstall
 chmod +x llamainstall.sh
 ./llamainstall.sh
