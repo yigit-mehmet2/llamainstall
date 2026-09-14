@@ -1,32 +1,46 @@
-# Ollama Mobile Installer for Termux (PRoot)
+# Ollama Installer (Termux & Linux)
 
-An automated bash script that installs and runs **Ollama** natively on Android devices using Termux and PRoot (Ubuntu), bypassing Android's binary execution (`noexec`) restrictions.
+An automated bash script suite to quickly install and run **Ollama** across Android (Termux) and native Linux systems.
 
-This project is tailored to deploy **Llama 3.2 (1B)**, making local AI inference accessible even on budget or mid-range devices with **4 GB of RAM** (tested Samsung Galaxy Tab A9).
+This project is optimized to run **Llama 3.2 (1B)**, making local AI inference smooth and lightweight even on budget devices or systems with **4 GB of RAM**.
 
 ---
 
 ## Features
 
-- **PRoot Isolation:** Runs inside a lightweight Ubuntu container to bypass Android's `cannot execute` / `noexec` dynamic linker errors.
-- **Low-RAM Friendly:** Automatically pulls `llama3.2:1b`, requiring only **~1.3 GB - 1.8 GB** of active RAM.
-- **One-Click Setup:** Automatically updates dependencies, configures PRoot, installs Ollama, and starts the model interface.
+* **Android PRoot Isolation:** Bypasses Android's execution restrictions (`noexec` / `cannot execute` binary errors) by running inside a lightweight Ubuntu PRoot container.
+* **Package Manager Detection:** Automatically handles package installation across `pacman`, `apt`, and `dnf` on native Linux.
+* **Low-RAM Optimization:** Defaults to `llama3.2:1b`, which requires only **~1.3 GB - 1.8 GB** of active RAM.
 
 ---
 
-## Prerequisites
+## Repository Structure
 
-1. Install **Termux** (it is strongly recommended to use the [F-Droid build](https://f-droid.org/en/packages/com.termux/)).
-2. An active internet connection for initial model download.
+* `llamainstalltermux.sh` — Automated installer for Android (Termux).
+* `llamainstalllinux.sh` — Automated installer for Desktop / Server Linux (Arch, Debian, Fedora, Every Linux Distro's).
 
 ---
 
 ## Quick Start
 
-Clone the repository and run the setup script:
+### 1. Mobile / Android (Termux)
+
+> **Note:** Make sure you are using the [F-Droid build of Termux](https://f-droid.org/en/packages/com.termux/).
 
 ```bash
-git clone https://github.com/yigit_mehmet2/llamainstall
+git clone https://github.com/yigit-mehmet2/llamainstall.git
 cd llamainstall
-chmod +x llamainstall.sh
-./llamainstall.sh
+chmod +x llamainstalltermux.sh
+./llamainstalltermux.sh
+```
+
+### 1. Linux (Every Lnux Distro's)
+
+> **Note:** For this script to run, you must have a Linux distro installed on your computer.
+
+```bash
+git clone https://github.com/yigit-mehmet2/llamainstall.git
+cd llamainstall
+chmod +x llamainstalllinux.sh
+./llamainstalllinux.sh
+```
